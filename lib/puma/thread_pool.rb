@@ -133,7 +133,7 @@ module Puma
           begin
             block.call(work, *extra)
           rescue Exception => e
-            STDERR.puts "Error reached top of thread-pool: #{e.message} (#{e.class})"
+            STDERR.puts "Error reached top of thread-pool: #{e.message} (#{e.class}). Backtrace: #{e.backtrace}"
           end
         end
 
